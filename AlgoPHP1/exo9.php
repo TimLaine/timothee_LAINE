@@ -11,14 +11,14 @@ La personne est imposable.</p><br>
 <h2>Résultat</h2>
 
 <?php
-$age = 10;
+$age = 36;
 $genre = "M";
 $condition1 = ($genre == "M" && $age >= 20);
 $condition2 = ($genre == "F" && $age >= 18 && $age <= 35);
 
 if($condition1 || $condition2) {
-	echo "imposable";
+	echo "Age : $age<br>Sexe : $genre<br>La personne est imposable";
 } else {
-	echo "non imposable";
+	echo "Age : $age<br>Sexe : $genre<br>La personne est non imposable";
 }
 ?>
