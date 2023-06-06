@@ -12,15 +12,26 @@ L’enfant qui a 10 ans appartient à la catégorie « Minime »</p><br>
 
 <?php
 $age = 8;
-if ($age >5 and $age <8) {
-	echo "L'enfant qui a $age ans appartient à la catégorie « Poussin »";
-} elseif ($age >7 and $age <10) {
-	echo "L'enfant qui a $age ans appartient à la catégorie « Pupille »";
-} elseif ($age >9 and $age <12){
-	echo "L'enfant qui a $age ans appartient à la catégorie « Minime »";
-} elseif ($age >= 12) {
-	echo "L'enfant qui a $age ans appartient à la catégorie « Cadet »";
-} else {
-	echo "L'enfant qui a $age ans est trop jeune pour rejoindre le club.";
+// if ($age >5 and $age <8) {
+// 	echo "L'enfant qui a $age ans appartient à la catégorie « Poussin »";
+// } elseif ($age >7 and $age <10) {
+// 	echo "L'enfant qui a $age ans appartient à la catégorie « Pupille »";
+// } elseif ($age >9 and $age <12){
+// 	echo "L'enfant qui a $age ans appartient à la catégorie « Minime »";
+// } elseif ($age >= 12) {
+// 	echo "L'enfant qui a $age ans appartient à la catégorie « Cadet »";
+// } else {
+// 	echo "L'enfant qui a $age ans est trop jeune pour rejoindre le club.";
+// }
+if ($age >=12) {
+	echo "l'enfant qui a $age ans appartient à la catégorie «Cadet»";
+} elseif ($age >9) {
+	echo "l'enfant qui a $age ans appartient à la catégorie «Minime»";
+}elseif ($age>7) {
+	echo "l'enfant qui a $age ans appartient à la catégorie «Pupille»";
+}elseif ($age>=6) {
+	echo "l'enfant qui a $age ans appartient à la catégorie «Poussin»";
+}else {
+	echo "l'enfant qui a $age ans est trop jeune pour rejoindre le club";
 }
 ?>

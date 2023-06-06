@@ -11,10 +11,16 @@ Table de 8 :
 <h2>Résultat</h2>
 
 <?php
-$chiffre = 0;
+$chiffre = 4;
 $x = 0;
 echo "Table de $chiffre : <br>";
 for ($x = 1; $x <= 10; $x++) {
 	echo "$x x $chiffre =" . $x*$chiffre . "<br>";
+}
+echo "Table de $chiffre : <br>";
+$x=1;
+while ($x<=10) {
+	echo "$x x $chiffre =" . $x*$chiffre ."<br>";
+	$x++;
 }
 ?>
