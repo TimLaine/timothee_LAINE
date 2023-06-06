@@ -13,27 +13,29 @@ Rendue de monnaie : <br>
 <h2>Résultat</h2>
 
 <?php
-$prix = 15;
-$donne = 50;
+$prix = 152;
+$donne = 200;
 $ancienreste = $donne-$prix;
 $reste = $donne-$prix;
-$dix = 0;
-$cinq = 0;
-$deux = 0;
-$un = 0;
+$dix = intdiv($reste,10);
+$reste = $reste-$dix;
+$cinq = intdiv($reste,5);
+$reste = $reste-$cinq;
+$deux = intdiv($reste,2);
+$reste = $reste-$deux;
+$un = intdiv($reste,1);
 $x = 0;
-for ($x = 1; $reste>9 ; $x++) {
-	$reste = $reste-10; $dix = $x;
-}
-for ($x = 1; $reste>4 ; $x++) {
-	$reste = $reste-5; $cinq = $x;
-}
-for ($x = 1; $reste>1 ; $x++) {
-	$reste = $reste-2; $deux = $x;
-}
-for ($x = 1; $reste>0 ; $x++) {
-	$reste = $reste-1; $un = $x;
-}
-
+// for ($x = 1; $reste>9 ; $x++) {
+// 	$reste = $reste-10; $dix = $x;
+// }
+// for ($x = 1; $reste>4 ; $x++) {
+// 	$reste = $reste-5; $cinq = $x;
+// }
+// for ($x = 1; $reste>1 ; $x++) {
+// 	$reste = $reste-2; $deux = $x;
+// }
+// for ($x = 1; $reste>0 ; $x++) {
+// 	$reste = $reste-1; $un = $x;
+// }
 echo "Montant à payer : $prix €<br>Montant versé : $donne €<br>Reste à payer : $reste €<br>***************************************************<br>Rendue de monanie :<br>$dix billets de 10€ - $cinq billet de 5€ - $deux pièce de 2€ - $un pièce de 1€"
 ?>

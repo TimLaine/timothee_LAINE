@@ -19,5 +19,11 @@ Il y a 4 marques de voitures dans le tableau : <br>
 <h2>Résultat</h2>
 <?php
 $voiture = array("Peugeot","Renault","BMW","Mercedes");
-echo "Il y a ". count($voiture). " marques de voiture dans le tableau : <br><ul><li>$voiture[0]</li><li>$voiture[1]</li><li>$voiture[2]</li><li>$voiture[3]</li></ul>"
+$nbMarques = count($voiture);
+$x = 0;
+echo "Il y a ". count($voiture). " marques de voiture dans le tableau : <br>";
+for ($x = 0; $x < $nbMarques; $x++) {
+	echo "<li>".$voiture[$x];
+}
+// echo "Il y a ". count($voiture). " marques de voiture dans le tableau : <br><ul><li>$voiture[0]</li><li>$voiture[1]</li><li>$voiture[2]</li><li>$voiture[3]</li></ul>"
 ?>
