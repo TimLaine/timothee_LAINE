@@ -13,18 +13,18 @@ Rendue de monnaie : <br>
 <h2>Résultat</h2>
 
 <?php
-$prix = 152;
-$donne = 200;
+$prix = 15;
+$donne = 50;
 $ancienreste = $donne-$prix;
-$reste = $donne-$prix;
+$reste = $ancienreste;
 $dix = intdiv($reste,10);
-$reste = $reste-$dix;
+$reste = $reste-$dix*10;
 $cinq = intdiv($reste,5);
-$reste = $reste-$cinq;
+$reste = $reste-$cinq*5;
 $deux = intdiv($reste,2);
-$reste = $reste-$deux;
+$reste = $reste-$deux*2;
 $un = intdiv($reste,1);
-$x = 0;
+//$x = 0;
 // for ($x = 1; $reste>9 ; $x++) {
 // 	$reste = $reste-10; $dix = $x;
 // }
@@ -37,5 +37,5 @@ $x = 0;
 // for ($x = 1; $reste>0 ; $x++) {
 // 	$reste = $reste-1; $un = $x;
 // }
-echo "Montant à payer : $prix €<br>Montant versé : $donne €<br>Reste à payer : $reste €<br>***************************************************<br>Rendue de monanie :<br>$dix billets de 10€ - $cinq billet de 5€ - $deux pièce de 2€ - $un pièce de 1€"
+echo "Montant à payer : $prix €<br>Montant versé : $donne €<br>Reste à payer : $ancienreste €<br>***************************************************<br>Rendue de monanie :<br>$dix billets de 10€ - $cinq billet de 5€ - $deux pièce de 2€ - $un pièce de 1€"
 ?>
