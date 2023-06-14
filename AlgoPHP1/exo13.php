@@ -10,5 +10,5 @@ $notes = [10,12,8,19,3,16,11,13,9];
 $moyenne = array_sum($notes)/count($notes);
 echo "Les notes obtenues par l'élève sont : "; foreach ($notes as $detail) {
 	echo " $detail";
-}; echo "<br>Sa moyenne générale est donc de : ". round ($moyenne, 2, PHP_ROUND_HALF_UP);
+}; echo "<br>Sa moyenne générale est donc de : ". round ($moyenne, 2);
 ?>
