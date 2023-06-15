@@ -12,6 +12,7 @@ Réaliser un algorithme permettant d’afficher le tableau HTML suivant (notez q
 Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales); <br>
 </p>
 <p>Affichage<br><br>
+<h2>Résultat</h2>
 <table >
     <thead>
         <tr>

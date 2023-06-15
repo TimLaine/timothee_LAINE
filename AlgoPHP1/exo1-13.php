@@ -3,7 +3,7 @@
 <p>Affichage :
 Les notes obtenues par l’élève sont : 10 12 8 19 3 16 11 13 9
 Sa moyenne générale est donc de : 11.22</p>
-<h2>Réponse</h2>
+<h2>Résultat</h2>
 
 <?php
 $notes = [10,12,8,19,3,16,11,13,9];
