@@ -7,28 +7,28 @@ de validation (submit).</p>
 
 <?php
 
-$arrayInfos = ["Nom","Prénom","Adresse e-mail","Ville"];
-$gendersRadio = ["Masculin","Féminin","Autre"];
-$experiences = ["Développeur logiciel"=>"checked","Designer web"=>"checked","Intégrateur"=>"","Chef de projet"=>""];
 function afficherArray($arrayInfos,$gendersRadio,$experiences){
-
+    
     foreach($arrayInfos as $info){?>
         <label for="input"><?php echo $info ?></label><br>
         <input type="text" id="input" name="input"><br>
-<?php
+        <?php
     }
     ?> <br> <?php
     foreach($gendersRadio as $genderRadio){?>
         <input type="radio" id="<?php echo strtolower($genderRadio) ?>" name="genre" value="<?php echo strtolower($genderRadio) ?>">
         <label for="<?php echo strtolower($genderRadio) ?>"><?php echo $genderRadio ?></label><br>
-   <?php }
+        <?php }
 ?> <p>Quelles expériences avez-vous eu dans l'industrie ?</p> <?php   
-   foreach($experiences as $choice=>$check){?>
+foreach($experiences as $choice=>$check){?>
     <label for="check"><?php echo $choice ?></label><br>
     <input type="checkbox" id="check" name="check" <?php echo $check ?>><br>
-<?php 
+    <?php 
 }
 ?> <br><input type="submit" value="Envoyer le dossier"> 
 <?php
 }
+$arrayInfos = ["Nom","Prénom","Adresse e-mail","Ville"];
+$gendersRadio = ["Masculin","Féminin","Autre"];
+$experiences = ["Développeur logiciel"=>"checked","Designer web"=>"checked","Intégrateur"=>"","Chef de projet"=>""];
 afficherArray($arrayInfos,$gendersRadio,$experiences);
