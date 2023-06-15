@@ -22,7 +22,7 @@ function afficherTableHTML($capitales)
 {
     //Sorts capitales in alphabetical order
     ksort($capitales);
-    // Les balises de PHP sont ouvertes et refermées pour profiter de Emmet pour le HTML
+    // PHP tags are opened and closed to use Emmet for HTML
     ?><table>
             <thead>
                 <tr>
