@@ -9,5 +9,8 @@ MON TEXTE EN PARAMETRE
 <h2>Résultat</h2>
 
 <?php
-
+function convertirMajRouge($texte){
+echo "<font color=red>".mb_strtoupper($texte)."</font>";
+}
+convertirMajRouge("Mon texte en paramètre");
 ?>
