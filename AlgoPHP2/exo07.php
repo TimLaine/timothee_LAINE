@@ -7,3 +7,32 @@ genererCheckbox($elements); <br>
 </p>
 <h2>Résultat</h2>
 
+<?php
+// Simple methode using an array
+$elements = ["Choix 1"=>"checked","Choix 2"=>"checked","Choix 3"=>""];
+
+function genererCheckbox($elements){
+
+    foreach($elements as $choice=>$check){?>
+        <label for="check"><?php echo $choice ?></label><br>
+        <input type="checkbox" id="check" name="check" <?php echo $check ?>><br>
+<?php
+    }
+}
+genererCheckbox($elements);
+?>
+<?php
+// Just for fun, I'll try and make one with booleans and an IF (works great)
+$elementsif = ["Choix 1"=>true,"Choix 2"=>false,"Choix 3"=>false];
+function genererCheckboxIF($elementsif){
+    foreach($elementsif as $choiceif=>$checkif){
+        if($checkif){?>
+                <label for="check"><?php echo $choiceif ?></label><br>
+                <input type="checkbox" id="check" name="check" checked><br><?php            
+        } else{?>
+            <label for="check"><?php echo $choiceif ?></label><br>
+            <input type="checkbox" id="check" name="check"><br><?php
+        }
+    }
+}
+genererCheckboxIF($elementsif);
