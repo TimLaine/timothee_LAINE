@@ -14,12 +14,14 @@ Alice DUCHEMIN a … ans<br></p>
 Class Personne{
     private $_nom;
     private $_prenom;
+    private $_birth;
     private $_age;
 
-    public function __construct ($nom,$prenom,$age){
+    public function __construct ($nom,$prenom,$birth){
         $this->_nom = $nom;
         $this->_prenom = $prenom;
-        $this->_age = $age;
+        $this->_birth = $birth;
+        $this->_age = $this->calcAge();
     }
     public function getNom(){
         return $this->_nom;
@@ -27,22 +29,21 @@ Class Personne{
     public function getPrenom(){
         return $this->_prenom;
     }
+    public function getBirth(){
+        return $this->_birth;
+    }
     public function getAge(){
         return $this->_age;
     }
-    public function setAge($age){
-        $this->_age = $age;
+    public function calcAge(){
+        $today = new DateTime();
+        $birth = (new DateTime($this->_birth));
+        $age = $today->diff($birth);
+        return $age->y;
     }
 }
-$date = new DateTime();
-$age = new DateTime('01-01-2000');
-$vieux = $date->diff($age);
 $p1 = new Personne("DUPONT","Michel","1980-02-19");
 $p2 = new Personne("DUCHEMIN","Alice","1985-01-17");
-$p1->setAge("1996-03-23");
-$age = strtotime($p1->getPrenom());
-echo date('d/M/Y', $age);
-// echo $p1->getPrenom()." ". $p1->getNom()." a ".$p1->getAge()." ans<br>";
-// echo $p2->getPrenom()." ". $p2->getNom()." a ".$p2->getAge()." ans";
-// echo "<br>".$vieux->y;
+echo $p1->getPrenom()." ". $p1->getNom()." a ".$p1->getAge()." ans<br>";
+echo $p2->getPrenom()." ". $p2->getNom()." a ".$p2->getAge()." ans";
 ?>
