@@ -10,6 +10,9 @@ string(5) "texte" <br>
 int(10) <br>
 float(25.369) <br>
 array(2) { [0]=> string(7) "valeur1" [1]=> string(7) "valeur2" }</p>
+
+<h2>Résultat</h2>
+
 <?php
 $tableauValeurs = [true, "texte",10,25.369,["valeur1","valeur2"]];
 foreach ($tableauValeurs as $var){
