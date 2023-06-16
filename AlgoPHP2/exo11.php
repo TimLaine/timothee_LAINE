@@ -7,9 +7,13 @@ formaterDateFr("2018-02-23");
 <h2>Résultat</h2>
 <?php
 function formaterDateFr($numDate){
+    //First, the string needs to be converted to DateTime
     $frDate = new DateTime($numDate);
-    $frDate = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
-    echo $frDate->format(time());
+    // Then, a third variable express the format we want for our DateTime
+    $formatterDate = new IntlDateFormatter('fr_FR', 
+    IntlDateFormatter::FULL, IntlDateFormatter::NONE);
+    // Finally, we convert the original DateTime into our desired format using the third variable
+    echo $formatterDate->format($frDate);
 }
 formaterDateFr("2018-02-23");
 ?>
