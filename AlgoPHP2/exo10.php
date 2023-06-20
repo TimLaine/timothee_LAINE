@@ -7,28 +7,36 @@ de validation (submit).</p>
 
 <?php
 
-function afficherArray($arrayInfos,$gendersRadio,$experiences){
-    $result = "";
+function afficherInfos($arrayInfos){
+    $resultInfos = "";
     foreach($arrayInfos as $info){
-        $result .= "<label for=\"input\">$info</label><br>
+        $resultInfos .= "<label for=\"input\">$info</label><br>
         <input type=\"text\" id=\"input\" name=\"input\"><br>";
-        
     }
-    $result .= "<br>";
+    return $resultInfos;
+}
+function afficherRadio($gendersRadio){
+    $resultRadio = "<br>";
     foreach($gendersRadio as $genderRadio){
-        $result .= "<input type=\"radio\" id=\"".strtolower($genderRadio)."\" name=\"genre\" value=\"strtolower($genderRadio)\">
+        $resultRadio .= "<input type=\"radio\" id=\"".strtolower($genderRadio)."\" name=\"genre\" value=\"strtolower($genderRadio)\">
         <label for=\"".strtolower($genderRadio)."\">$genderRadio</label><br>";
          }
-    $result .= "<br>Quelles expériences avez-vous eu dans l'industrie ? <br><br>";    
-    foreach($experiences as $choice=>$check){
-    $result .= "<label for=\"check\">$choice</label><br>
-    <input type=\"checkbox\" id=\"check\" name=\"check\"$check><br>";
-     
+    return $resultRadio;
 }
-    $result .= "<br><input type=\"submit\" value=\"Envoyer le dossier\">";
+function afficherExperience ($experiences){
+    $resultExp = "<br>Quelles expériences avez-vous eu dans l'industrie ? <br><br>";    
+    foreach($experiences as $choice=>$check){
+    $resultExp .= "<label for=\"check\">$choice</label><br>
+    <input type=\"checkbox\" id=\"check\" name=\"check\"$check><br>";
+}
+return $resultExp;
+}
+function afficherFormulaire($arrayInfos,$gendersRadio,$experiences){
+    $result = afficherInfos($arrayInfos).afficherRadio($gendersRadio).afficherExperience($experiences). "<br><input type=\"submit\" value=\"Envoyer le dossier\">";
     return $result;
+
 }
 $arrayInfos = ["Nom","Prénom","Adresse e-mail","Ville"];
 $gendersRadio = ["Masculin","Féminin","Autre"];
 $experiences = ["Développeur logiciel"=>"checked","Designer web"=>"checked","Intégrateur"=>"","Chef de projet"=>""];
-echo afficherArray($arrayInfos,$gendersRadio,$experiences);
+echo afficherFormulaire($arrayInfos,$gendersRadio,$experiences);
