@@ -24,7 +24,8 @@ Class Voiture{
         $this->_marche = false;
     }
     public function getMarque(){
-        echo "Le véhicule est une $this->_marque";
+        return $this->_marque;
+        // echo "Le véhicule est une $this->_marque";
     }
     public function getModele(){
         echo "Le véhicule est une $this->_modele";
@@ -88,4 +89,7 @@ Class Voiture{
 }
 $v1 = new Voiture("Peugeot","408",5);
 $v2 = new Voiture("Citroen","C4",3);
-echo $v1->getInfo();
+$v1->demarrer();
+$v1->accelerer(50);
+$v1->ralentir(80);
+$v1->getInfo();

@@ -14,3 +14,9 @@ function repeterImage($url,$nb){
     return $result;
 }
 echo repeterImage("http://my.mobirise.com/data/userpic/764.jpg",4);
+
+// echo str_repeat("<img src='http://my.mobirise.com/data/userpic/764.jpg'>",4);
+
+// foreach(range(1, $nb)) {
+//     //...
+// }
