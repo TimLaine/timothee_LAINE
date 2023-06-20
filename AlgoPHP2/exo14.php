@@ -24,17 +24,14 @@ Class Voiture{
         $this->_type = $type;
     }
     public function getMarque(){
-        echo "Le véhicule est une $this->_marque";
+        return $this->_marque;
     }
     public function getModele(){
-        echo "Le véhicule est une $this->_modele";
+        return $this->_modele;
     }
     public function getInfos(){
-        if($this->_type == "électrique"){
-            echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule $this->_type. Il lui reste $self->_autonomie km d'autonomie.";            
-        } else{
-            echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule $this->_type.";
-        }
+        $result = "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule $this->_type.";
+        return $result;
     }
 }
 Class VoitureElec extends Voiture{
@@ -47,7 +44,9 @@ Class VoitureElec extends Voiture{
         echo "Il reste $this->_autonomie km d'autonomie.";
     }
     public function getInfos(){
-        echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule électrique. Il lui reste $this->_autonomie km d'autonomie.";
+        $result = parent::getInfos();
+        $result .= " Il lui reste $this->_autonomie km d'autonomie.";
+        return $result;
     }
 }
 $v1 = new Voiture("Peugeot","408","thermique");

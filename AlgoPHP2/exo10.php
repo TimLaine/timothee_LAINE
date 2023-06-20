@@ -34,7 +34,6 @@ return $resultExp;
 function afficherFormulaire($arrayInfos,$gendersRadio,$experiences){
     $result = afficherInfos($arrayInfos).afficherRadio($gendersRadio).afficherExperience($experiences). "<br><input type=\"submit\" value=\"Envoyer le dossier\">";
     return $result;
-
 }
 $arrayInfos = ["Nom","Prénom","Adresse e-mail","Ville"];
 $gendersRadio = ["Masculin","Féminin","Autre"];
