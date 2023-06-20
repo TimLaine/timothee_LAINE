@@ -12,27 +12,28 @@ genererCheckbox($elements); <br>
 $elements = ["Choix 1"=>"checked","Choix 2"=>"checked","Choix 3"=>""];
 
 function genererCheckbox($elements){
-
-    foreach($elements as $choice=>$check){?>
-        <label for="check"><?php echo $choice ?></label><br>
-        <input type="checkbox" id="check" name="check" <?php echo $check ?>><br>
-<?php
+    $result = "";
+    foreach($elements as $choice=>$check){
+        $result .= "<label for=\"check\">$choice</label><br>
+        <input type=\"checkbox\" id=\"check\" name=\"check\"$check><br>";
     }
+    return $result;
 }
-genererCheckbox($elements);
-?>
-<?php
+echo genererCheckbox($elements);
+
 // Just for fun, I'll try and make one with booleans and an IF (works great)
 $elementsif = ["Choix 1"=>true,"Choix 2"=>false,"Choix 3"=>false];
 function genererCheckboxIF($elementsif){
+    $result = "";
     foreach($elementsif as $choiceif=>$checkif){
-        if($checkif){?>
-                <label for="check"><?php echo $choiceif ?></label><br>
-                <input type="checkbox" id="check" name="check" checked><br><?php            
-        } else{?>
-            <label for="check"><?php echo $choiceif ?></label><br>
-            <input type="checkbox" id="check" name="check"><br><?php
+        if($checkif){
+                $result .= "<label for=\"check\">$choiceif</label><br>
+                <input type=\"checkbox\" id=\"check\" name=\"check\" checked><br>";
+        } else {
+           $result .= "<label for=\"check\">$choiceif</label><br>
+            <input type=\"checkbox\" id=\"check\" name=\check\"><br>";
         }
     }
+    return $result;
 }
-genererCheckboxIF($elementsif);
+echo genererCheckboxIF($elementsif);

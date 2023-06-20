@@ -10,32 +10,25 @@ alimenterListeDeroulante($elements); <br>
 <?php
 // First solution using a simple function with strings
 function afficherListe($string1, $string2, $string3){
-    ?> 
-    
-        <select name="Liste" id="liste">
-            <option value="<?php echo $string1 ?>"><?php echo $string1 ?></option>
-            <option value="<?php echo $string2 ?>"><?php echo $string2 ?></option>
-            <option value="<?php echo $string3 ?>"><?php echo $string3 ?></option>
-        </select>
-    
-    <?php
+        $result = "";
+        $result .= "<select name=\"Liste\" id=\"liste\">
+            <option value=\"$string1\">$string1</option>
+            <option value=\"$string2\">$string2</option>
+            <option value=\"$string3\">$string3</option>
+        </select>";
+    return $result;
     }
 
-// Second solution using an array, works now, afficherArray was in the function itself rather than outside
-afficherListe("Monsieur","Madame","Mademoiselle");
+// Second solution using an array, had a problem, afficherArray was in the function itself rather than outside
+echo afficherListe("Monsieur","Madame","Mademoiselle");
 $liste = ["Monsieur","Madame","Mademoiselle"];
 function afficherArray($liste){
-    ?>
-
-        <select name="Liste" id="liste">
-            <?php
-                foreach($liste as $choice){?>
-                    <option value="<?php echo $choice ?>"><?php echo $choice ?></option>
-                <?php
-                }
-            ?>
-        </select>
-
-    <?php
+    $result = "";
+    $result .= "<select name=\"Liste\" id=\"liste\">";
+    foreach($liste as $choice){
+        $result .= "<option value=\"$choice\">$choice</option>";
+        }
+    $result .= "</select>";
+    return $result;
 }
-afficherArray($liste);
+echo afficherArray($liste);

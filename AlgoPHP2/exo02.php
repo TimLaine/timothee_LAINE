@@ -42,12 +42,12 @@ Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales); <br>
 </p>
 <?php
 $capitales = ["France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome"];
-function afficherTableHTML($capitales)
+function afficherTableHTML($capitales):string
 {
-    $capitales = ["France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome"];
+    $result = "";
     //Sorts capitales in alphabetical order
     ksort($capitales);
-    echo "<table>
+    $result .= "<table>
             <thead>
                 <tr>
                     <th>Pays</th>
@@ -55,14 +55,17 @@ function afficherTableHTML($capitales)
                 </tr>
             </thead><tbody>";
     foreach($capitales as $pays=>$capitale){
-        echo "<tr>
+        $result .= "<tr>
                 <td>".mb_strtoupper($pays)."</td>
                 <td>".$capitale."</td>
             </tr>";
     }
-    "</tbody></table>";
+    $result .= "</tbody></table>";
+    return $result;
 }
-afficherTableHTMLEmmetHTML($capitales);
+
+echo afficherTableHTMLEmmetHTML($capitales);
+
 function afficherTableHTMLEmmetHTML($capitales)
 {
     $capitales = ["France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome"];

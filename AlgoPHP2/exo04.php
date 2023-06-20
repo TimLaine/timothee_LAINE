@@ -20,27 +20,28 @@ $capitales = array ("France"=>"Paris","Allemagne"=>"Berlin",
     $capitales = ["France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome", "Espagne"=>"Madrid"];
 function afficherTableHTML($capitales)
 {
+    $result = "";
     //Sorts capitales in alphabetical order
     ksort($capitales);
-    // PHP tags are opened and closed to use Emmet for HTML
-    ?><table>
-            <thead>
-                <tr>
-                    <th>Pays</th>
-                    <th>Capitale</th>
-                    <th>Lien wiki</th>
-                </tr>
-            </thead><tbody>
-    <?php
+    $result .= "<table>
+                    <thead>
+                        <tr>
+                            <th>Pays</th>
+                            <th>Capitale</th>
+                            <th>Lien wiki</th>
+                        </tr>
+                    </thead><tbody>";
     foreach($capitales as $pays=>$capitale){
-        ?><tr>
-                <td><?= mb_strtoupper($pays) ?></td>
-                <td><?= $capitale ?></td>
-                <td><a href="https://fr.wikipedia.org/wiki/<?php echo $capitale ?>" target="_blank">Lien</a></td>
-            </tr>
-        <?php
+        $result .= "<tr>
+                <td>" .mb_strtoupper($pays). "</td>
+                <td> $capitale</td>
+                <td><a href=\"https://fr.wikipedia.org/wiki/$capitale\" target=\"_blank\">Lien</a></td>
+            </tr>";
+        
     }
-    ?> </tbody></table> <?php
+    $result .= "</tbody></table>";
+
+    return $result;
 }
-afficherTableHTML($capitales)
+echo afficherTableHTML($capitales)
 ?>

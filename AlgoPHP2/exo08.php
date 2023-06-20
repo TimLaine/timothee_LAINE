@@ -7,8 +7,10 @@ repeterImage($url,4);
 <h2>Résultat</h2>
 <?php
 function repeterImage($url,$nb){
-    for($i=1; $i<=$nb; $i++){?>
-        <img src="<?php echo $url ?>" alt="chien<?php echo $i ?>">
-    <?php }
+    $result = "";
+    for($i=1; $i<=$nb; $i++){
+        $result .= "<img src=\"$url\" alt=\"chien$i\">";
+     }
+    return $result;
 }
-repeterImage("http://my.mobirise.com/data/userpic/764.jpg",4);
+echo repeterImage("http://my.mobirise.com/data/userpic/764.jpg",4);

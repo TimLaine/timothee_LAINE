@@ -10,10 +10,12 @@ afficherRadio($nomsRadio);
 
 $nomsRadio = ["Masculin","Féminin","Autre"];
 function afficherRadio($nomsRadio){
-    foreach($nomsRadio as $nomRadio){?>
-        <input type="radio" id="<?php echo strtolower($nomRadio) ?>" name="genre" value="<?php echo strtolower($nomRadio) ?>">
-        <label for="<?php echo strtolower($nomRadio) ?>"><?php echo $nomRadio ?></label><br>
-   <?php }
+    $result = "";
+    foreach($nomsRadio as $nomRadio){
+        $result .= "<input type=\"radio\" id=\"".mb_strtolower($nomRadio)."\" name=\"genre\" value=\"strtolower($nomRadio)\">
+        <label for=\"strtolower($nomRadio)\">$nomRadio</label><br>";
+    }
+    return $result;
 }
-afficherRadio($nomsRadio);
+echo afficherRadio($nomsRadio);
 ?>

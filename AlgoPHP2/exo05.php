@@ -10,32 +10,31 @@ afficherInput($nomsInput);</p>
 <?php
 // First solution using a simple function with strings
 function afficherInput($string1, $string2, $string3){
-?> 
+    $result = "<label for=\"input1\">$string1</label><br>
+    <input type=\"text\" id=\"input1\" name=\"input1\"><br>
+    <label for=\"input2\">$string2</label><br>
+    <input type=\"text\" id=\"input2\" name=\"input2\"><br>
+    <label for=\"input3\">$string3</label><br>
+    <input type=\"text\" id=\"input3\" name=\"input3\">";
 
-    <label for="input1"><?php echo $string1 ?></label><br>
-    <input type="text" id="input1" name="input1"><br>
-    <label for="input2"><?php echo $string2 ?></label><br>
-    <input type="text" id="input2" name="input2"><br>
-    <label for="input3"><?php echo $string3 ?></label><br>
-    <input type="text" id="input3" name="input3">
-
-<?php
+    return $result;
 }
-afficherInput("Nom", "Prénom", "Ville");
-
+echo afficherInput("Nom", "Prénom", "Ville");
+?> 
+<br><br><br><br> 
+<?php
 // Second solution using an array
-?> <br><br><br><br> <?php
 $nomsInput = ["Nom","Prénom","Ville"];
 
 function afficherArray($nomsInput){
-
-    foreach($nomsInput as $input){?>
-        <label for="input"><?php echo $input ?></label><br>
-        <input type="text" id="input" name="input"><br>
-<?php
+    $result = "";
+    foreach($nomsInput as $input){
+        $result .= "<label for=\"input\">$input</label><br>
+        <input type=\"text\" id=\"input\" name=\"input\"><br>";
     }
+    return $result;
 }
 
-afficherArray($nomsInput);
+echo afficherArray($nomsInput);
 
 

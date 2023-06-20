@@ -8,6 +8,7 @@ L’adresse elan@elan-formation.fr est une adresse e-mail valide
 <?php
 
 function emailValidation($string){
+    // This works like a boolean, checking if the email is valid
     if (filter_var($string, FILTER_VALIDATE_EMAIL)){
         echo "L'adresse $string est une adresse e-mail valide. <br>";
     } else {

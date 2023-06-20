@@ -8,27 +8,27 @@ de validation (submit).</p>
 <?php
 
 function afficherArray($arrayInfos,$gendersRadio,$experiences){
-    
-    foreach($arrayInfos as $info){?>
-        <label for="input"><?php echo $info ?></label><br>
-        <input type="text" id="input" name="input"><br>
-        <?php
+    $result = "";
+    foreach($arrayInfos as $info){
+        $result .= "<label for=\"input\">$info</label><br>
+        <input type=\"text\" id=\"input\" name=\"input\"><br>";
+        
     }
-    ?> <br> <?php
-    foreach($gendersRadio as $genderRadio){?>
-        <input type="radio" id="<?php echo strtolower($genderRadio) ?>" name="genre" value="<?php echo strtolower($genderRadio) ?>">
-        <label for="<?php echo strtolower($genderRadio) ?>"><?php echo $genderRadio ?></label><br>
-        <?php }
-?> <p>Quelles expériences avez-vous eu dans l'industrie ?</p> <?php   
-foreach($experiences as $choice=>$check){?>
-    <label for="check"><?php echo $choice ?></label><br>
-    <input type="checkbox" id="check" name="check" <?php echo $check ?>><br>
-    <?php 
+    $result .= "<br>";
+    foreach($gendersRadio as $genderRadio){
+        $result .= "<input type=\"radio\" id=\"".strtolower($genderRadio)."\" name=\"genre\" value=\"strtolower($genderRadio)\">
+        <label for=\"".strtolower($genderRadio)."\">$genderRadio</label><br>";
+         }
+    $result .= "<br>Quelles expériences avez-vous eu dans l'industrie ? <br><br>";    
+    foreach($experiences as $choice=>$check){
+    $result .= "<label for=\"check\">$choice</label><br>
+    <input type=\"checkbox\" id=\"check\" name=\"check\"$check><br>";
+     
 }
-?> <br><input type="submit" value="Envoyer le dossier"> 
-<?php
+    $result .= "<br><input type=\"submit\" value=\"Envoyer le dossier\">";
+    return $result;
 }
 $arrayInfos = ["Nom","Prénom","Adresse e-mail","Ville"];
 $gendersRadio = ["Masculin","Féminin","Autre"];
 $experiences = ["Développeur logiciel"=>"checked","Designer web"=>"checked","Intégrateur"=>"","Chef de projet"=>""];
-afficherArray($arrayInfos,$gendersRadio,$experiences);
+echo afficherArray($arrayInfos,$gendersRadio,$experiences);
