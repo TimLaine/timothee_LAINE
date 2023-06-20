@@ -15,10 +15,12 @@ echo $ve1->getInfos()."<br/>";</p> <br>
 Class Voiture{
     protected string $_marque;
     protected string $_modele;
+    protected string $_type;
 
-    public function __construct(string $marque, string $modele){
+    public function __construct(string $marque, string $modele, string $type){
         $this->_marque = $marque;
         $this->_modele = $modele;
+        $this->_type = $type;
     }
     public function getMarque(){
         echo "Le véhicule est une $this->_marque";
@@ -27,16 +29,28 @@ Class Voiture{
         echo "Le véhicule est une $this->_modele";
     }
     public function getInfos(){
-        echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule thermique.";
+        if($this->_type == "électrique"){
+            echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule $this->_type. Il lui reste $self->_autonomie km d'autonomie.";            
+        } else{
+            echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule $this->_type.";
+        }
     }
 }
 Class VoitureElec extends Voiture{
     private int $_autonomie;
-    public function __construct(string $marque, string $modele, int $autonomie){
-        parent::__construct($marque, $modele);
+    public function __construct(string $marque, string $modele, string $type, int $autonomie){
+        parent::__construct($marque, $modele, $type);
         $this->_autonomie = $autonomie;
     }
+    public function getAutonomie(){
+        echo "Il reste $this->_autonomie km d'autonomie.";
+    }
+    public function getInfos(){
+        echo "Le véhicule est une $this->_marque $this->_modele. C'est un véhicule électrique. Il lui reste $this->_autonomie km d'autonomie.";
+    }
 }
-$v1 = new Voiture("Peugeot","408");
-$ve2 = new VoitureElec("Citroen","C4",100);
+$v1 = new Voiture("Peugeot","408","thermique");
+$ve2 = new VoitureElec("Citroen","C4","électrique",100);
 echo $ve2->getInfos();
+echo "<br>";
+echo $v1->getInfos();
