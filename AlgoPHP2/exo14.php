@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1>Exercice 14</h1>
 <p>Créer une classe Voiture possédant 2 propriétés (marque et modèle) ainsi qu’une classe VoitureElec qui hérite (extends) de la classe Voiture et qui a une propriété supplémentaire (autonomie).</p>
 <p>Instancier une voiture « classique » et une voiture « électrique » ayant les caractéristiques suivantes : <br>
